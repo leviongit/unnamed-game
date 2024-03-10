@@ -1,0 +1,1005 @@
+* 000000 [Engine] Log started at 2024/3/10 2:51:38
+* 000000 [Engine] DragonRuby Game Toolkit
+* 000000 [Engine]   Version: 5.20
+* 000000 [Engine]   Tier: Pro
+* 000000 [Engine]   GIT Hash: 02e375f00fd5bb2f5b1536f453f7142b54ca801a
+* 000000 [Engine]   Build Date: Mar  6 2024 00:25:10
+* 000000 [Engine] Platform: Linux
+- 000000 [Engine] Game Dir: /mnt/files/dr/the-game-tm-question-mark
+- 000000 [Engine] Game ID: the-game-tm-question-mark
+- 000000 [Engine] Game Title: the-game-tm-question-mark
+- 000000 [Engine] Game Version: 0.1.0
+- 000000 [Engine] Game Package ID: org.todo-change-me.the-game-tm-question-mark
+- 000000 [Engine] Game Developer ID: todo-change-me
+- 000000 [Engine] Game Developer Title: My Name &lt;todo@example.com&gt;
+- 000000 [Engine] Production Build: no
+- 000000 [Engine] Remote Hotload: no
+- 000000 [Render] SDL video backend: x11
+- 000000 [Render] SDL renderer backend: opengl
+- 000000 [Render] Window size: 1280x720 (requested 1280x720)
+- 000000 [Render] Fullscreen Desktop mode: no
+- 000000 [Render] HD: no
+- 000000 [Render] HighDPI: no
+- 000000 [Render] Max texture size: 16384x16384 (system reported 16384x16384)
+- 000000 [Render] Logical render size: 1280x720
+- 000000 [Render] Native render size: 1280x720
+? 000000 [Engine] RNG seed has been set to 1710035498.
+- 000000 [Engine] Janitor is using 4 threads.
+- 000000 [Game] * IMPORTANT: Array primitive that contains hashes was detected.
+This can cause performance issues. Please consider changing this primitive
+to a Hash in its entirety.
+** Backtrace:
+app/main.rb:99:in tick
+
+NOTE: You can put ~$gtk.warn_array_primitives!~ at the bottom of =app/main.rb=
+to perform a full audit of your codebase.
+
+- 000000 [Game] * EXCEPTION:
+* ERROR:
+640
+
+I don't know how to use the above Integer with SDL's FFI. Please
+add a method on the object called ~primitive_marker~ that
+returns :solid, :sprite, :label, :line, or :border. If the object
+is a Hash, please add { primitive_marker: :PRIMITIVE_SYMBOL } to the Hash.
+
+
+** Backtrace: (0)
+- 000000 [Game] 
+- 000000 [Game] * WARNING: NilClass does not support serialization. Returning nil.
+Please override the :serialize method and return a hash so that
+Class can be persisted to disk in the event of an exception.
+Here is an example of what you need to do:
+#+begin_src ruby
+class NilClass
+  # 1. Create a serialize method that returns a hash with all of
+  #    the values you care about.
+  def serialize
+    { }
+  end
+
+  # 2. Override the inspect method and return ~serialize.to_s~.
+  def inspect
+    serialize.to_s
+  end
+
+  # 3. Override to_s and return ~serialize.to_s~.
+  def to_s
+    serialize.to_s
+  end
+end
+#+end_src
+- 000000 [Game] 
+- 000000 [Game] [Message ID: [:NilClass]]
+- 000000 [Game] 
+- 000000 [Game] 
+- 000000 [Game] * WARNING: Symbol does not support serialization. Returning nil.
+Please override the :serialize method and return a hash so that
+Class can be persisted to disk in the event of an exception.
+Here is an example of what you need to do:
+#+begin_src ruby
+class Symbol
+  # 1. Create a serialize method that returns a hash with all of
+  #    the values you care about.
+  def serialize
+    { }
+  end
+
+  # 2. Override the inspect method and return ~serialize.to_s~.
+  def inspect
+    serialize.to_s
+  end
+
+  # 3. Override to_s and return ~serialize.to_s~.
+  def to_s
+    serialize.to_s
+  end
+end
+#+end_src
+- 000000 [Game] 
+- 000000 [Game] [Message ID: [:Symbol]]
+- 000000 [Game] 
+- 000000 [Game] * EXCEPTION:
+* ERROR:
+30
+
+I don't know how to use the above Integer with SDL's FFI. Please
+add a method on the object called ~primitive_marker~ that
+returns :solid, :sprite, :label, :line, or :border. If the object
+is a Hash, please add { primitive_marker: :PRIMITIVE_SYMBOL } to the Hash.
+
+
+** Backtrace: (0)
+- 000000 [Game] * EXCEPTION:
+* ERROR:
+1240
+
+I don't know how to use the above Integer with SDL's FFI. Please
+add a method on the object called ~primitive_marker~ that
+returns :solid, :sprite, :label, :line, or :border. If the object
+is a Hash, please add { primitive_marker: :PRIMITIVE_SYMBOL } to the Hash.
+
+
+** Backtrace: (0)
+- 000000 [Game] * EXCEPTION:
+* ERROR:
+20
+
+I don't know how to use the above Integer with SDL's FFI. Please
+add a method on the object called ~primitive_marker~ that
+returns :solid, :sprite, :label, :line, or :border. If the object
+is a Hash, please add { primitive_marker: :PRIMITIVE_SYMBOL } to the Hash.
+
+
+** Backtrace: (0)
+- 000000 [Game] * EXCEPTION:
+* ERROR:
+pixel
+
+I don't know how to use the above Symbol with SDL's FFI. Please
+add a method on the object called ~primitive_marker~ that
+returns :solid, :sprite, :label, :line, or :border. If the object
+is a Hash, please add { primitive_marker: :PRIMITIVE_SYMBOL } to the Hash.
+
+
+** Backtrace: (0)
+- 000000 [Game] * EXCEPTION:
+* ERROR:
+0.5
+
+I don't know how to use the above Float with SDL's FFI. Please
+add a method on the object called ~primitive_marker~ that
+returns :solid, :sprite, :label, :line, or :border. If the object
+is a Hash, please add { primitive_marker: :PRIMITIVE_SYMBOL } to the Hash.
+
+
+** Backtrace: (0)
+- 000000 [Game] * EXCEPTION:
+* ERROR:
+0.5
+
+I don't know how to use the above Float with SDL's FFI. Please
+add a method on the object called ~primitive_marker~ that
+returns :solid, :sprite, :label, :line, or :border. If the object
+is a Hash, please add { primitive_marker: :PRIMITIVE_SYMBOL } to the Hash.
+
+
+** Backtrace: (0)
+? 000028 [Engine] Reloaded app/main.rb. (1679)
+- 000028 [Game] * EXCEPTION POSSIBLY CAUSED BY CALLING ~gtk.reset~: maybe use ~$gtk.reset_next_tick~ instead.
+An exception occurred soon after ~$gtk.reset~ was invoked.
+
+Keep in mind that ~$gtk.reset~ doesn't stop the rest of your ~tick~ method from being invoked.
+
+You may have attempted to interact with properties on ~args.state~ that no longer have a value.
+
+There are a few ways to fix exceptions that fall into this category:
+
+1. Wherever you are using ~$gtk.reset~ within ~tick~, replace
+   with ~$gtk.reset_next_tick~ (this function will tell DragonRuby to
+   reset on the next frame before invoking your ~tick~ method).
+2. Anywhere you are using ~$gtk.reset~, immediately set default values for
+   properties on ~args.state~ that are needed to complete the execution
+   of the rest of your ~tick~ function successfully.
+3. Do not use ~$gtk.reset~ and instead create a function that reinitializes your game
+   and ensures it has a consistent/valid state.
+
+   Take a look at the following sample apps for insights on how to do this:
+   - =./samples/99_genre_boss_battle/boss_battle_game_jam/app/main.rb=
+   - =./samples/99_genre_platformer/shadows/app/main.rb=
+
+** NOTE:
+The options above are ordered by quickest to implement (but probably not
+bulletproof), to more work to implement (but a better design long term).
+
+* EXCEPTION THROWN:
+* ERROR:
+640
+
+I don't know how to use the above Integer with SDL's FFI. Please
+add a method on the object called ~primitive_marker~ that
+returns :solid, :sprite, :label, :line, or :border. If the object
+is a Hash, please add { primitive_marker: :PRIMITIVE_SYMBOL } to the Hash.
+
+
+** Backtrace:
+
+* Backtrace ~$gtk.reset~ last invocation: (1680)
+- 000028 [Game] * EXCEPTION POSSIBLY CAUSED BY CALLING ~gtk.reset~: maybe use ~$gtk.reset_next_tick~ instead.
+An exception occurred soon after ~$gtk.reset~ was invoked.
+
+Keep in mind that ~$gtk.reset~ doesn't stop the rest of your ~tick~ method from being invoked.
+
+You may have attempted to interact with properties on ~args.state~ that no longer have a value.
+
+There are a few ways to fix exceptions that fall into this category:
+
+1. Wherever you are using ~$gtk.reset~ within ~tick~, replace
+   with ~$gtk.reset_next_tick~ (this function will tell DragonRuby to
+   reset on the next frame before invoking your ~tick~ method).
+2. Anywhere you are using ~$gtk.reset~, immediately set default values for
+   properties on ~args.state~ that are needed to complete the execution
+   of the rest of your ~tick~ function successfully.
+3. Do not use ~$gtk.reset~ and instead create a function that reinitializes your game
+   and ensures it has a consistent/valid state.
+
+   Take a look at the following sample apps for insights on how to do this:
+   - =./samples/99_genre_boss_battle/boss_battle_game_jam/app/main.rb=
+   - =./samples/99_genre_platformer/shadows/app/main.rb=
+
+** NOTE:
+The options above are ordered by quickest to implement (but probably not
+bulletproof), to more work to implement (but a better design long term).
+
+* EXCEPTION THROWN:
+* ERROR:
+30
+
+I don't know how to use the above Integer with SDL's FFI. Please
+add a method on the object called ~primitive_marker~ that
+returns :solid, :sprite, :label, :line, or :border. If the object
+is a Hash, please add { primitive_marker: :PRIMITIVE_SYMBOL } to the Hash.
+
+
+** Backtrace:
+
+* Backtrace ~$gtk.reset~ last invocation: (1680)
+- 000028 [Game] * EXCEPTION POSSIBLY CAUSED BY CALLING ~gtk.reset~: maybe use ~$gtk.reset_next_tick~ instead.
+An exception occurred soon after ~$gtk.reset~ was invoked.
+
+Keep in mind that ~$gtk.reset~ doesn't stop the rest of your ~tick~ method from being invoked.
+
+You may have attempted to interact with properties on ~args.state~ that no longer have a value.
+
+There are a few ways to fix exceptions that fall into this category:
+
+1. Wherever you are using ~$gtk.reset~ within ~tick~, replace
+   with ~$gtk.reset_next_tick~ (this function will tell DragonRuby to
+   reset on the next frame before invoking your ~tick~ method).
+2. Anywhere you are using ~$gtk.reset~, immediately set default values for
+   properties on ~args.state~ that are needed to complete the execution
+   of the rest of your ~tick~ function successfully.
+3. Do not use ~$gtk.reset~ and instead create a function that reinitializes your game
+   and ensures it has a consistent/valid state.
+
+   Take a look at the following sample apps for insights on how to do this:
+   - =./samples/99_genre_boss_battle/boss_battle_game_jam/app/main.rb=
+   - =./samples/99_genre_platformer/shadows/app/main.rb=
+
+** NOTE:
+The options above are ordered by quickest to implement (but probably not
+bulletproof), to more work to implement (but a better design long term).
+
+* EXCEPTION THROWN:
+* ERROR:
+1240
+
+I don't know how to use the above Integer with SDL's FFI. Please
+add a method on the object called ~primitive_marker~ that
+returns :solid, :sprite, :label, :line, or :border. If the object
+is a Hash, please add { primitive_marker: :PRIMITIVE_SYMBOL } to the Hash.
+
+
+** Backtrace:
+
+* Backtrace ~$gtk.reset~ last invocation: (1680)
+- 000028 [Game] * EXCEPTION POSSIBLY CAUSED BY CALLING ~gtk.reset~: maybe use ~$gtk.reset_next_tick~ instead.
+An exception occurred soon after ~$gtk.reset~ was invoked.
+
+Keep in mind that ~$gtk.reset~ doesn't stop the rest of your ~tick~ method from being invoked.
+
+You may have attempted to interact with properties on ~args.state~ that no longer have a value.
+
+There are a few ways to fix exceptions that fall into this category:
+
+1. Wherever you are using ~$gtk.reset~ within ~tick~, replace
+   with ~$gtk.reset_next_tick~ (this function will tell DragonRuby to
+   reset on the next frame before invoking your ~tick~ method).
+2. Anywhere you are using ~$gtk.reset~, immediately set default values for
+   properties on ~args.state~ that are needed to complete the execution
+   of the rest of your ~tick~ function successfully.
+3. Do not use ~$gtk.reset~ and instead create a function that reinitializes your game
+   and ensures it has a consistent/valid state.
+
+   Take a look at the following sample apps for insights on how to do this:
+   - =./samples/99_genre_boss_battle/boss_battle_game_jam/app/main.rb=
+   - =./samples/99_genre_platformer/shadows/app/main.rb=
+
+** NOTE:
+The options above are ordered by quickest to implement (but probably not
+bulletproof), to more work to implement (but a better design long term).
+
+* EXCEPTION THROWN:
+* ERROR:
+20
+
+I don't know how to use the above Integer with SDL's FFI. Please
+add a method on the object called ~primitive_marker~ that
+returns :solid, :sprite, :label, :line, or :border. If the object
+is a Hash, please add { primitive_marker: :PRIMITIVE_SYMBOL } to the Hash.
+
+
+** Backtrace:
+
+* Backtrace ~$gtk.reset~ last invocation: (1680)
+- 000028 [Game] * EXCEPTION POSSIBLY CAUSED BY CALLING ~gtk.reset~: maybe use ~$gtk.reset_next_tick~ instead.
+An exception occurred soon after ~$gtk.reset~ was invoked.
+
+Keep in mind that ~$gtk.reset~ doesn't stop the rest of your ~tick~ method from being invoked.
+
+You may have attempted to interact with properties on ~args.state~ that no longer have a value.
+
+There are a few ways to fix exceptions that fall into this category:
+
+1. Wherever you are using ~$gtk.reset~ within ~tick~, replace
+   with ~$gtk.reset_next_tick~ (this function will tell DragonRuby to
+   reset on the next frame before invoking your ~tick~ method).
+2. Anywhere you are using ~$gtk.reset~, immediately set default values for
+   properties on ~args.state~ that are needed to complete the execution
+   of the rest of your ~tick~ function successfully.
+3. Do not use ~$gtk.reset~ and instead create a function that reinitializes your game
+   and ensures it has a consistent/valid state.
+
+   Take a look at the following sample apps for insights on how to do this:
+   - =./samples/99_genre_boss_battle/boss_battle_game_jam/app/main.rb=
+   - =./samples/99_genre_platformer/shadows/app/main.rb=
+
+** NOTE:
+The options above are ordered by quickest to implement (but probably not
+bulletproof), to more work to implement (but a better design long term).
+
+* EXCEPTION THROWN:
+* ERROR:
+pixel
+
+I don't know how to use the above Symbol with SDL's FFI. Please
+add a method on the object called ~primitive_marker~ that
+returns :solid, :sprite, :label, :line, or :border. If the object
+is a Hash, please add { primitive_marker: :PRIMITIVE_SYMBOL } to the Hash.
+
+
+** Backtrace:
+
+* Backtrace ~$gtk.reset~ last invocation: (1680)
+- 000028 [Game] * EXCEPTION POSSIBLY CAUSED BY CALLING ~gtk.reset~: maybe use ~$gtk.reset_next_tick~ instead.
+An exception occurred soon after ~$gtk.reset~ was invoked.
+
+Keep in mind that ~$gtk.reset~ doesn't stop the rest of your ~tick~ method from being invoked.
+
+You may have attempted to interact with properties on ~args.state~ that no longer have a value.
+
+There are a few ways to fix exceptions that fall into this category:
+
+1. Wherever you are using ~$gtk.reset~ within ~tick~, replace
+   with ~$gtk.reset_next_tick~ (this function will tell DragonRuby to
+   reset on the next frame before invoking your ~tick~ method).
+2. Anywhere you are using ~$gtk.reset~, immediately set default values for
+   properties on ~args.state~ that are needed to complete the execution
+   of the rest of your ~tick~ function successfully.
+3. Do not use ~$gtk.reset~ and instead create a function that reinitializes your game
+   and ensures it has a consistent/valid state.
+
+   Take a look at the following sample apps for insights on how to do this:
+   - =./samples/99_genre_boss_battle/boss_battle_game_jam/app/main.rb=
+   - =./samples/99_genre_platformer/shadows/app/main.rb=
+
+** NOTE:
+The options above are ordered by quickest to implement (but probably not
+bulletproof), to more work to implement (but a better design long term).
+
+* EXCEPTION THROWN:
+* ERROR:
+0.5
+
+I don't know how to use the above Float with SDL's FFI. Please
+add a method on the object called ~primitive_marker~ that
+returns :solid, :sprite, :label, :line, or :border. If the object
+is a Hash, please add { primitive_marker: :PRIMITIVE_SYMBOL } to the Hash.
+
+
+** Backtrace:
+
+* Backtrace ~$gtk.reset~ last invocation: (1680)
+- 000028 [Game] * EXCEPTION POSSIBLY CAUSED BY CALLING ~gtk.reset~: maybe use ~$gtk.reset_next_tick~ instead.
+An exception occurred soon after ~$gtk.reset~ was invoked.
+
+Keep in mind that ~$gtk.reset~ doesn't stop the rest of your ~tick~ method from being invoked.
+
+You may have attempted to interact with properties on ~args.state~ that no longer have a value.
+
+There are a few ways to fix exceptions that fall into this category:
+
+1. Wherever you are using ~$gtk.reset~ within ~tick~, replace
+   with ~$gtk.reset_next_tick~ (this function will tell DragonRuby to
+   reset on the next frame before invoking your ~tick~ method).
+2. Anywhere you are using ~$gtk.reset~, immediately set default values for
+   properties on ~args.state~ that are needed to complete the execution
+   of the rest of your ~tick~ function successfully.
+3. Do not use ~$gtk.reset~ and instead create a function that reinitializes your game
+   and ensures it has a consistent/valid state.
+
+   Take a look at the following sample apps for insights on how to do this:
+   - =./samples/99_genre_boss_battle/boss_battle_game_jam/app/main.rb=
+   - =./samples/99_genre_platformer/shadows/app/main.rb=
+
+** NOTE:
+The options above are ordered by quickest to implement (but probably not
+bulletproof), to more work to implement (but a better design long term).
+
+* EXCEPTION THROWN:
+* ERROR:
+0.5
+
+I don't know how to use the above Float with SDL's FFI. Please
+add a method on the object called ~primitive_marker~ that
+returns :solid, :sprite, :label, :line, or :border. If the object
+is a Hash, please add { primitive_marker: :PRIMITIVE_SYMBOL } to the Hash.
+
+
+** Backtrace:
+
+* Backtrace ~$gtk.reset~ last invocation: (1680)
+- 000494 [Game] * INFO: New methods discovered.
+** :collision_vert?
+
+? 000494 [Engine] Reloaded app/main.rb. (29639)
+- 000494 [Game] * EXCEPTION POSSIBLY CAUSED BY CALLING ~gtk.reset~: maybe use ~$gtk.reset_next_tick~ instead.
+An exception occurred soon after ~$gtk.reset~ was invoked.
+
+Keep in mind that ~$gtk.reset~ doesn't stop the rest of your ~tick~ method from being invoked.
+
+You may have attempted to interact with properties on ~args.state~ that no longer have a value.
+
+There are a few ways to fix exceptions that fall into this category:
+
+1. Wherever you are using ~$gtk.reset~ within ~tick~, replace
+   with ~$gtk.reset_next_tick~ (this function will tell DragonRuby to
+   reset on the next frame before invoking your ~tick~ method).
+2. Anywhere you are using ~$gtk.reset~, immediately set default values for
+   properties on ~args.state~ that are needed to complete the execution
+   of the rest of your ~tick~ function successfully.
+3. Do not use ~$gtk.reset~ and instead create a function that reinitializes your game
+   and ensures it has a consistent/valid state.
+
+   Take a look at the following sample apps for insights on how to do this:
+   - =./samples/99_genre_boss_battle/boss_battle_game_jam/app/main.rb=
+   - =./samples/99_genre_platformer/shadows/app/main.rb=
+
+** NOTE:
+The options above are ordered by quickest to implement (but probably not
+bulletproof), to more work to implement (but a better design long term).
+
+* EXCEPTION THROWN:
+* ERROR:
+640
+
+I don't know how to use the above Integer with SDL's FFI. Please
+add a method on the object called ~primitive_marker~ that
+returns :solid, :sprite, :label, :line, or :border. If the object
+is a Hash, please add { primitive_marker: :PRIMITIVE_SYMBOL } to the Hash.
+
+
+** Backtrace:
+
+* Backtrace ~$gtk.reset~ last invocation: (29640)
+- 000494 [Game] * EXCEPTION POSSIBLY CAUSED BY CALLING ~gtk.reset~: maybe use ~$gtk.reset_next_tick~ instead.
+An exception occurred soon after ~$gtk.reset~ was invoked.
+
+Keep in mind that ~$gtk.reset~ doesn't stop the rest of your ~tick~ method from being invoked.
+
+You may have attempted to interact with properties on ~args.state~ that no longer have a value.
+
+There are a few ways to fix exceptions that fall into this category:
+
+1. Wherever you are using ~$gtk.reset~ within ~tick~, replace
+   with ~$gtk.reset_next_tick~ (this function will tell DragonRuby to
+   reset on the next frame before invoking your ~tick~ method).
+2. Anywhere you are using ~$gtk.reset~, immediately set default values for
+   properties on ~args.state~ that are needed to complete the execution
+   of the rest of your ~tick~ function successfully.
+3. Do not use ~$gtk.reset~ and instead create a function that reinitializes your game
+   and ensures it has a consistent/valid state.
+
+   Take a look at the following sample apps for insights on how to do this:
+   - =./samples/99_genre_boss_battle/boss_battle_game_jam/app/main.rb=
+   - =./samples/99_genre_platformer/shadows/app/main.rb=
+
+** NOTE:
+The options above are ordered by quickest to implement (but probably not
+bulletproof), to more work to implement (but a better design long term).
+
+* EXCEPTION THROWN:
+* ERROR:
+30
+
+I don't know how to use the above Integer with SDL's FFI. Please
+add a method on the object called ~primitive_marker~ that
+returns :solid, :sprite, :label, :line, or :border. If the object
+is a Hash, please add { primitive_marker: :PRIMITIVE_SYMBOL } to the Hash.
+
+
+** Backtrace:
+
+* Backtrace ~$gtk.reset~ last invocation: (29640)
+- 000494 [Game] * EXCEPTION POSSIBLY CAUSED BY CALLING ~gtk.reset~: maybe use ~$gtk.reset_next_tick~ instead.
+An exception occurred soon after ~$gtk.reset~ was invoked.
+
+Keep in mind that ~$gtk.reset~ doesn't stop the rest of your ~tick~ method from being invoked.
+
+You may have attempted to interact with properties on ~args.state~ that no longer have a value.
+
+There are a few ways to fix exceptions that fall into this category:
+
+1. Wherever you are using ~$gtk.reset~ within ~tick~, replace
+   with ~$gtk.reset_next_tick~ (this function will tell DragonRuby to
+   reset on the next frame before invoking your ~tick~ method).
+2. Anywhere you are using ~$gtk.reset~, immediately set default values for
+   properties on ~args.state~ that are needed to complete the execution
+   of the rest of your ~tick~ function successfully.
+3. Do not use ~$gtk.reset~ and instead create a function that reinitializes your game
+   and ensures it has a consistent/valid state.
+
+   Take a look at the following sample apps for insights on how to do this:
+   - =./samples/99_genre_boss_battle/boss_battle_game_jam/app/main.rb=
+   - =./samples/99_genre_platformer/shadows/app/main.rb=
+
+** NOTE:
+The options above are ordered by quickest to implement (but probably not
+bulletproof), to more work to implement (but a better design long term).
+
+* EXCEPTION THROWN:
+* ERROR:
+1240
+
+I don't know how to use the above Integer with SDL's FFI. Please
+add a method on the object called ~primitive_marker~ that
+returns :solid, :sprite, :label, :line, or :border. If the object
+is a Hash, please add { primitive_marker: :PRIMITIVE_SYMBOL } to the Hash.
+
+
+** Backtrace:
+
+* Backtrace ~$gtk.reset~ last invocation: (29640)
+- 000494 [Game] * EXCEPTION POSSIBLY CAUSED BY CALLING ~gtk.reset~: maybe use ~$gtk.reset_next_tick~ instead.
+An exception occurred soon after ~$gtk.reset~ was invoked.
+
+Keep in mind that ~$gtk.reset~ doesn't stop the rest of your ~tick~ method from being invoked.
+
+You may have attempted to interact with properties on ~args.state~ that no longer have a value.
+
+There are a few ways to fix exceptions that fall into this category:
+
+1. Wherever you are using ~$gtk.reset~ within ~tick~, replace
+   with ~$gtk.reset_next_tick~ (this function will tell DragonRuby to
+   reset on the next frame before invoking your ~tick~ method).
+2. Anywhere you are using ~$gtk.reset~, immediately set default values for
+   properties on ~args.state~ that are needed to complete the execution
+   of the rest of your ~tick~ function successfully.
+3. Do not use ~$gtk.reset~ and instead create a function that reinitializes your game
+   and ensures it has a consistent/valid state.
+
+   Take a look at the following sample apps for insights on how to do this:
+   - =./samples/99_genre_boss_battle/boss_battle_game_jam/app/main.rb=
+   - =./samples/99_genre_platformer/shadows/app/main.rb=
+
+** NOTE:
+The options above are ordered by quickest to implement (but probably not
+bulletproof), to more work to implement (but a better design long term).
+
+* EXCEPTION THROWN:
+* ERROR:
+20
+
+I don't know how to use the above Integer with SDL's FFI. Please
+add a method on the object called ~primitive_marker~ that
+returns :solid, :sprite, :label, :line, or :border. If the object
+is a Hash, please add { primitive_marker: :PRIMITIVE_SYMBOL } to the Hash.
+
+
+** Backtrace:
+
+* Backtrace ~$gtk.reset~ last invocation: (29640)
+- 000494 [Game] * EXCEPTION POSSIBLY CAUSED BY CALLING ~gtk.reset~: maybe use ~$gtk.reset_next_tick~ instead.
+An exception occurred soon after ~$gtk.reset~ was invoked.
+
+Keep in mind that ~$gtk.reset~ doesn't stop the rest of your ~tick~ method from being invoked.
+
+You may have attempted to interact with properties on ~args.state~ that no longer have a value.
+
+There are a few ways to fix exceptions that fall into this category:
+
+1. Wherever you are using ~$gtk.reset~ within ~tick~, replace
+   with ~$gtk.reset_next_tick~ (this function will tell DragonRuby to
+   reset on the next frame before invoking your ~tick~ method).
+2. Anywhere you are using ~$gtk.reset~, immediately set default values for
+   properties on ~args.state~ that are needed to complete the execution
+   of the rest of your ~tick~ function successfully.
+3. Do not use ~$gtk.reset~ and instead create a function that reinitializes your game
+   and ensures it has a consistent/valid state.
+
+   Take a look at the following sample apps for insights on how to do this:
+   - =./samples/99_genre_boss_battle/boss_battle_game_jam/app/main.rb=
+   - =./samples/99_genre_platformer/shadows/app/main.rb=
+
+** NOTE:
+The options above are ordered by quickest to implement (but probably not
+bulletproof), to more work to implement (but a better design long term).
+
+* EXCEPTION THROWN:
+* ERROR:
+pixel
+
+I don't know how to use the above Symbol with SDL's FFI. Please
+add a method on the object called ~primitive_marker~ that
+returns :solid, :sprite, :label, :line, or :border. If the object
+is a Hash, please add { primitive_marker: :PRIMITIVE_SYMBOL } to the Hash.
+
+
+** Backtrace:
+
+* Backtrace ~$gtk.reset~ last invocation: (29640)
+- 000494 [Game] * EXCEPTION POSSIBLY CAUSED BY CALLING ~gtk.reset~: maybe use ~$gtk.reset_next_tick~ instead.
+An exception occurred soon after ~$gtk.reset~ was invoked.
+
+Keep in mind that ~$gtk.reset~ doesn't stop the rest of your ~tick~ method from being invoked.
+
+You may have attempted to interact with properties on ~args.state~ that no longer have a value.
+
+There are a few ways to fix exceptions that fall into this category:
+
+1. Wherever you are using ~$gtk.reset~ within ~tick~, replace
+   with ~$gtk.reset_next_tick~ (this function will tell DragonRuby to
+   reset on the next frame before invoking your ~tick~ method).
+2. Anywhere you are using ~$gtk.reset~, immediately set default values for
+   properties on ~args.state~ that are needed to complete the execution
+   of the rest of your ~tick~ function successfully.
+3. Do not use ~$gtk.reset~ and instead create a function that reinitializes your game
+   and ensures it has a consistent/valid state.
+
+   Take a look at the following sample apps for insights on how to do this:
+   - =./samples/99_genre_boss_battle/boss_battle_game_jam/app/main.rb=
+   - =./samples/99_genre_platformer/shadows/app/main.rb=
+
+** NOTE:
+The options above are ordered by quickest to implement (but probably not
+bulletproof), to more work to implement (but a better design long term).
+
+* EXCEPTION THROWN:
+* ERROR:
+0.5
+
+I don't know how to use the above Float with SDL's FFI. Please
+add a method on the object called ~primitive_marker~ that
+returns :solid, :sprite, :label, :line, or :border. If the object
+is a Hash, please add { primitive_marker: :PRIMITIVE_SYMBOL } to the Hash.
+
+
+** Backtrace:
+
+* Backtrace ~$gtk.reset~ last invocation: (29640)
+- 000494 [Game] * EXCEPTION POSSIBLY CAUSED BY CALLING ~gtk.reset~: maybe use ~$gtk.reset_next_tick~ instead.
+An exception occurred soon after ~$gtk.reset~ was invoked.
+
+Keep in mind that ~$gtk.reset~ doesn't stop the rest of your ~tick~ method from being invoked.
+
+You may have attempted to interact with properties on ~args.state~ that no longer have a value.
+
+There are a few ways to fix exceptions that fall into this category:
+
+1. Wherever you are using ~$gtk.reset~ within ~tick~, replace
+   with ~$gtk.reset_next_tick~ (this function will tell DragonRuby to
+   reset on the next frame before invoking your ~tick~ method).
+2. Anywhere you are using ~$gtk.reset~, immediately set default values for
+   properties on ~args.state~ that are needed to complete the execution
+   of the rest of your ~tick~ function successfully.
+3. Do not use ~$gtk.reset~ and instead create a function that reinitializes your game
+   and ensures it has a consistent/valid state.
+
+   Take a look at the following sample apps for insights on how to do this:
+   - =./samples/99_genre_boss_battle/boss_battle_game_jam/app/main.rb=
+   - =./samples/99_genre_platformer/shadows/app/main.rb=
+
+** NOTE:
+The options above are ordered by quickest to implement (but probably not
+bulletproof), to more work to implement (but a better design long term).
+
+* EXCEPTION THROWN:
+* ERROR:
+0.5
+
+I don't know how to use the above Float with SDL's FFI. Please
+add a method on the object called ~primitive_marker~ that
+returns :solid, :sprite, :label, :line, or :border. If the object
+is a Hash, please add { primitive_marker: :PRIMITIVE_SYMBOL } to the Hash.
+
+
+** Backtrace:
+
+* Backtrace ~$gtk.reset~ last invocation: (29640)
+? 000506 [Engine] Reloaded app/main.rb. (30359)
+? 000534 [Engine] Reloaded app/main.rb. (32065)
+? 000601 [Engine] Reloaded app/main.rb. (36059)
+? 000658 [Engine] Reloaded app/main.rb. (39479)
+? 000702 [Engine] Reloaded app/main.rb. (42119)
+? 000778 [Engine] Reloaded app/main.rb. (46679)
+- 001008 [Game] * EXCEPTION POSSIBLY CAUSED BY CALLING ~gtk.reset~: maybe use ~$gtk.reset_next_tick~ instead.
+An exception occurred soon after ~$gtk.reset~ was invoked.
+
+Keep in mind that ~$gtk.reset~ doesn't stop the rest of your ~tick~ method from being invoked.
+
+You may have attempted to interact with properties on ~args.state~ that no longer have a value.
+
+There are a few ways to fix exceptions that fall into this category:
+
+1. Wherever you are using ~$gtk.reset~ within ~tick~, replace
+   with ~$gtk.reset_next_tick~ (this function will tell DragonRuby to
+   reset on the next frame before invoking your ~tick~ method).
+2. Anywhere you are using ~$gtk.reset~, immediately set default values for
+   properties on ~args.state~ that are needed to complete the execution
+   of the rest of your ~tick~ function successfully.
+3. Do not use ~$gtk.reset~ and instead create a function that reinitializes your game
+   and ensures it has a consistent/valid state.
+
+   Take a look at the following sample apps for insights on how to do this:
+   - =./samples/99_genre_boss_battle/boss_battle_game_jam/app/main.rb=
+   - =./samples/99_genre_platformer/shadows/app/main.rb=
+
+** NOTE:
+The options above are ordered by quickest to implement (but probably not
+bulletproof), to more work to implement (but a better design long term).
+
+* EXCEPTION THROWN:
+** Failed to load/reload app/main.rb.
+line 110:3: syntax error, unexpected keyword_end
+line 132:0: syntax error, unexpected end of file, expecting keyword_end
+
+
+
+** Backtrace:
+
+* Backtrace ~$gtk.reset~ last invocation: (60479)
+- 001042 [Game] * EXCEPTION POSSIBLY CAUSED BY CALLING ~gtk.reset~: maybe use ~$gtk.reset_next_tick~ instead.
+An exception occurred soon after ~$gtk.reset~ was invoked.
+
+Keep in mind that ~$gtk.reset~ doesn't stop the rest of your ~tick~ method from being invoked.
+
+You may have attempted to interact with properties on ~args.state~ that no longer have a value.
+
+There are a few ways to fix exceptions that fall into this category:
+
+1. Wherever you are using ~$gtk.reset~ within ~tick~, replace
+   with ~$gtk.reset_next_tick~ (this function will tell DragonRuby to
+   reset on the next frame before invoking your ~tick~ method).
+2. Anywhere you are using ~$gtk.reset~, immediately set default values for
+   properties on ~args.state~ that are needed to complete the execution
+   of the rest of your ~tick~ function successfully.
+3. Do not use ~$gtk.reset~ and instead create a function that reinitializes your game
+   and ensures it has a consistent/valid state.
+
+   Take a look at the following sample apps for insights on how to do this:
+   - =./samples/99_genre_boss_battle/boss_battle_game_jam/app/main.rb=
+   - =./samples/99_genre_platformer/shadows/app/main.rb=
+
+** NOTE:
+The options above are ordered by quickest to implement (but probably not
+bulletproof), to more work to implement (but a better design long term).
+
+* EXCEPTION THROWN:
+** Failed to load/reload app/main.rb.
+line 111:3: syntax error, unexpected keyword_end
+line 133:0: syntax error, unexpected end of file, expecting keyword_end
+
+
+
+** Backtrace:
+
+* Backtrace ~$gtk.reset~ last invocation: (62519)
+- 001081 [Game] * EXCEPTION POSSIBLY CAUSED BY CALLING ~gtk.reset~: maybe use ~$gtk.reset_next_tick~ instead.
+An exception occurred soon after ~$gtk.reset~ was invoked.
+
+Keep in mind that ~$gtk.reset~ doesn't stop the rest of your ~tick~ method from being invoked.
+
+You may have attempted to interact with properties on ~args.state~ that no longer have a value.
+
+There are a few ways to fix exceptions that fall into this category:
+
+1. Wherever you are using ~$gtk.reset~ within ~tick~, replace
+   with ~$gtk.reset_next_tick~ (this function will tell DragonRuby to
+   reset on the next frame before invoking your ~tick~ method).
+2. Anywhere you are using ~$gtk.reset~, immediately set default values for
+   properties on ~args.state~ that are needed to complete the execution
+   of the rest of your ~tick~ function successfully.
+3. Do not use ~$gtk.reset~ and instead create a function that reinitializes your game
+   and ensures it has a consistent/valid state.
+
+   Take a look at the following sample apps for insights on how to do this:
+   - =./samples/99_genre_boss_battle/boss_battle_game_jam/app/main.rb=
+   - =./samples/99_genre_platformer/shadows/app/main.rb=
+
+** NOTE:
+The options above are ordered by quickest to implement (but probably not
+bulletproof), to more work to implement (but a better design long term).
+
+* EXCEPTION THROWN:
+** Failed to load/reload app/main.rb.
+line 111:3: syntax error, unexpected keyword_end
+line 133:0: syntax error, unexpected end of file, expecting keyword_end
+
+
+
+** Backtrace:
+
+* Backtrace ~$gtk.reset~ last invocation: (64859)
+- 001082 [Game] -> $gtk.reset seed: 1710035498
+? 001082 [Engine] ~reset~ has been invoked (64944).
+- 001082 [Game] * EXCEPTION: * EXCEPTION: ~Runtime#add_to_require_queue~ failed for =app/main.rb=.
+line 111:3: syntax error, unexpected keyword_end
+line 133:0: syntax error, unexpected end of file, expecting keyword_end
+
+? 001102 [Engine] Reloaded app/main.rb. (66119)
+- 001102 [Game] Game state and exception will be written to logs/exceptions/game_state_30123.txt and logs/exceptions/current.txt.
+- 001102 [Game] * EXCEPTION:
+* ERROR - :keyboard method missing on ~NilClass~.
+The method named
+  :keyboard
+doesn't exist on
+  [NilClass, NilClass, NilClassFalseClass].
+#+begin_src ~NilClass#inspect~
+nil
+#+end_src ~NilClass#inspect~ for :keyboard method missing on ~NilClass~
+** Backtrace:
+*** app/main.rb:102:in input
+*** app/main.rb:124:in tick (66120)
+? 001107 [Engine] Reloaded app/main.rb. (66419)
+- 001107 [Game] Game state and exception will be written to logs/exceptions/game_state_30124.txt and logs/exceptions/current.txt.
+- 001107 [Game] * EXCEPTION:
+* ERROR:
+** :a "A"
+** :b "B"
+** :c "C"
+** :d "D"
+** :e "E"
+** :f "F"
+** :g "G"
+** :h "H"
+** :i "I"
+** :j "J"
+** :k "K"
+** :l "L"
+** :m "M"
+** :n "N"
+** :o "O"
+** :p "P"
+** :q "Q"
+** :r "R"
+** :s "S"
+** :t "T"
+** :u "U"
+** :v "V"
+** :w "W"
+** :x "X"
+** :y "Y"
+** :z "Z"
+** :exclamation_point "!"
+** :zero "0"
+** :one "1"
+** :two "2"
+** :three "3"
+** :four "4"
+** :five "5"
+** :six "6"
+** :seven "7"
+** :eight "8"
+** :nine "9"
+** :backspace ""
+** :escape ""
+** :enter ""
+** :tab ""
+** :open_round_brace "("
+** :close_round_brace ")"
+** :open_curly_brace "{"
+** :close_curly_brace "}"
+** :open_square_brace "["
+** :close_square_brace "]"
+** :colon ":"
+** :semicolon ";"
+** :equal "="
+** :hyphen "-"
+** :minus "-"
+** :space ""
+** :dollar_sign "$"
+** :double_quotation_mark """
+** :single_quotation_mark "'"
+** :backtick "`"
+** :tilde "~"
+** :period "."
+** :comma ","
+** :pipe "|"
+** :underscore "_"
+** :hash "#"
+** :plus "+"
+** :at "@"
+** :forward_slash "/"
+** :back_slash "\"
+** :asterisk "*"
+** :less_than "<"
+** :greater_than ">"
+** :caret "^"
+** :ampersand "&"
+** :superscript_two "²"
+** :section "§"
+** :question_mark "?"
+** :percent "%"
+** :ordinal_indicator "º"
+** :home raw_key == 1073741898
+** :end raw_key == 1073741901
+** :right_arrow raw_key == 1073741903
+** :left_arrow raw_key == 1073741904
+** :down_arrow raw_key == 1073741905
+** :up_arrow raw_key == 1073741906
+** :page_up raw_key == 1073741899
+** :page_down raw_key == 1073741902
+** :delete raw_key == 127
+** :shift_left raw_key == 1073742049
+** :shift raw_key == 1073742053
+** :shift_right raw_key == 1073742053
+** :control_left raw_key == 1073742048
+** :control raw_key == 1073742052
+** :control_right raw_key == 1073742052
+** :alt_left raw_key == 1073742050
+** :alt raw_key == 1073742054
+** :alt_right raw_key == 1073742054
+** :meta_left raw_key == 1073742051
+** :meta raw_key == 1073742055
+** :meta_right raw_key == 1073742055
+** :ac_search raw_key == 1073742092
+** :ac_home raw_key == 1073742093
+** :ac_back raw_key == 1073742094
+** :ac_forward raw_key == 1073742095
+** :ac_stop raw_key == 1073742096
+** :ac_refresh raw_key == 1073742097
+** :ac_bookmarks raw_key == 1073742098
+
+There is no key on the keyboard called :keys_held. Did you mean ?.
+Full list of available keys =:points_up:=.
+
+** Backtrace:
+*** app/main.rb:103:in input
+*** app/main.rb:124:in tick (66420)
+? 001118 [Engine] Reloaded app/main.rb. (67079)
+? 001133 [Engine] Reloaded app/main.rb. (67969)
+? 001147 [Engine] Reloaded app/main.rb. (68809)
+? 001165 [Engine] Reloaded app/main.rb. (69889)
+? 001177 [Engine] Reloaded app/main.rb. (70609)
+- 001212 [Game] -> $player_default_jump = 20
+- 001212 [Game] => 20
+? 001262 [Engine] Reloaded app/main.rb. (75709)
+- 001285 [Game] -> $player_default_jump = 20
+- 001285 [Game] => 20
+? 001295 [Engine] Reloaded app/main.rb. (77689)
+- 001296 [Game] -> $player_default_jump = 20
+- 001296 [Game] => 20
+- 001303 [Game] -> $player_default_jump = 30
+- 001303 [Game] => 30
+? 001346 [Engine] Reloaded app/main.rb. (80749)
+? 001355 [Engine] Reloaded app/main.rb. (81289)
+? 001369 [Engine] Reloaded app/main.rb. (82129)
+? 001381 [Engine] Reloaded app/main.rb. (82849)
+? 001395 [Engine] Reloaded app/main.rb. (83689)
+? 001407 [Engine] Reloaded app/main.rb. (84409)
+? 001439 [Engine] Reloaded app/main.rb. (86329)
+? 001447 [Engine] Reloaded app/main.rb. (86809)
+? 001463 [Engine] Reloaded app/main.rb. (87769)
+? 001519 [Engine] Reloaded app/main.rb. (91129)
+? 001531 [Engine] Reloaded app/main.rb. (91849)
+? 001545 [Engine] Reloaded app/main.rb. (92689)
+? 001558 [Engine] Reloaded app/main.rb. (93469)
+? 001566 [Engine] Reloaded app/main.rb. (93949)
+? 001569 [Engine] Reloaded app/main.rb. (94129)
+? 001616 [Engine] Reloaded app/main.rb. (96949)
+- 001675 [Game] -> $init_done
+- 001675 [Game] => true
+- 001677 [Game] -> $init_done = false
+- 001677 [Game] => false
+- 001725 [Engine] * INFO: Quit requested (103498).
+* 001725 [Engine] Logging shutting down

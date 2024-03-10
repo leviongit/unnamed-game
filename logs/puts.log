@@ -1,0 +1,25 @@
+* INFO - If you need to find rogue puts statements do:
+#+begin_src
+  def tick args
+    # adding the following line to the TOP of your tick method
+    # will print ~caller~ along side each ~puts~ statement
+    $gtk.add_caller_to_puts!
+  end
+#+end_src
+-> $gtk.reset seed: 1710035498
+* EXCEPTION: * EXCEPTION: ~Runtime#add_to_require_queue~ failed for =app/main.rb=.
+line 111:3: syntax error, unexpected keyword_end
+line 133:0: syntax error, unexpected end of file, expecting keyword_end
+
+-> $player_default_jump = 20
+=> 20
+-> $player_default_jump = 20
+=> 20
+-> $player_default_jump = 20
+=> 20
+-> $player_default_jump = 30
+=> 30
+-> $init_done
+=> true
+-> $init_done = false
+=> false

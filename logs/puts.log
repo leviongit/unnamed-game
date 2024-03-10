@@ -6,20 +6,29 @@
     $gtk.add_caller_to_puts!
   end
 #+end_src
--> $gtk.reset seed: 1710035498
-* EXCEPTION: * EXCEPTION: ~Runtime#add_to_require_queue~ failed for =app/main.rb=.
-line 111:3: syntax error, unexpected keyword_end
-line 133:0: syntax error, unexpected end of file, expecting keyword_end
-
--> $player_default_jump = 20
-=> 20
--> $player_default_jump = 20
-=> 20
--> $player_default_jump = 20
-=> 20
--> $player_default_jump = 30
-=> 30
--> $init_done
-=> true
+-> $player
+=> {:x=>610.000000000001, :y=>-120511.4785530315, :w=>32, :h=>48, :path=>:pixel, :vx=>7.868666886867635e-21, :vy=>-483.4415587728429, :ax=>0, :ay=>0, :anchor_x=>0.5, :anchor_y=>0.5}
+-> $player
+=> {:x=>1159.999709922286, :y=>49442.20859007834, :w=>32, :h=>48, :path=>:pixel, :vx=>2.900777148138919e-05, :vy=>97.82250993908565, :ax=>0, :ay=>0, :anchor_x=>0.5, :anchor_y=>0.5}
+-> $player
+=> {:x=>1160.000000000001, :y=>49309.42053813877, :w=>32, :h=>48, :path=>:pixel, :vx=>3.119221499268369e-14, :vy=>-98.17749006091435, :ax=>0, :ay=>0, :anchor_x=>0.5, :anchor_y=>0.5}
+-> $player
+=> {:x=>1160.000000000001, :y=>43999.61097545846, :w=>32, :h=>48, :path=>:pixel, :vx=>3.02493906737892e-16, :vy=>-142.1774900609144, :ax=>0, :ay=>0, :anchor_x=>0.5, :anchor_y=>0.5}
+-> $player
+=> {:x=>1160.000000000001, :y=>37855.86635314365, :w=>32, :h=>48, :path=>:pixel, :vx=>5.519909908629653e-18, :vy=>-180.1774900609144, :ax=>0, :ay=>0, :anchor_x=>0.5, :anchor_y=>0.5}
+-> $player
+=> {:x=>1160.000000000001, :y=>31349.00918113341, :w=>32, :h=>48, :path=>:pixel, :vx=>1.705826280846058e-19, :vy=>-213.1774900609144, :ax=>0, :ay=>0, :anchor_x=>0.5, :anchor_y=>0.5}
+-> $player
+=> {:x=>1160.000000000001, :y=>24974.03945942776, :w=>32, :h=>48, :path=>:pixel, :vx=>8.927401464366503e-21, :vy=>-241.1774900609144, :ax=>0, :ay=>0, :anchor_x=>0.5, :anchor_y=>0.5}
+-> $player
+=> {:x=>1160.000000000001, :y=>17544.89224766119, :w=>32, :h=>48, :path=>:pixel, :vx=>4.204920982915085e-22, :vy=>-270.1774900609144, :ax=>0, :ay=>0, :anchor_x=>0.5, :anchor_y=>0.5}
+-> $player
+=> {:x=>1160.000000000001, :y=>10465.45499613833, :w=>32, :h=>48, :path=>:pixel, :vx=>3.018704312037987e-23, :vy=>-295.1774900609144, :ax=>0, :ay=>0, :anchor_x=>0.5, :anchor_y=>0.5}
+-> $player
+=> {:x=>1160.000000000001, :y=>4035.727704859124, :w=>32, :h=>48, :path=>:pixel, :vx=>3.303035743101342e-24, :vy=>-316.1774900609144, :ax=>0, :ay=>0, :anchor_x=>0.5, :anchor_y=>0.5}
+-> $player
+=> {:x=>1160.000000000001, :y=>-3512.354566541906, :w=>32, :h=>48, :path=>:pixel, :vx=>2.927460139810762e-25, :vy=>-339.1774900609144, :ax=>0, :ay=>0, :anchor_x=>0.5, :anchor_y=>0.5}
+-> $init_done = false
+=> false
 -> $init_done = false
 => false

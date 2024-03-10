@@ -74,18 +74,40 @@ def collision_vert?(o1, o2)
   (x1 - lw1 < x2 + rw2) && (x1 + rw1 > x2 - lw2)
 end
 
+def collision_horiz?(o1, o2)
+end
+
 def handle_player
   player = $player
   ap_grav(player)
   ap_vel(player)
   ap_fric(player, 0.1)
 
-  return unless (wall = $geometry.find_intersect_rect($player, $level_geometry))
-  return unless collision_vert?(player, wall)
+  opy = player.y
+  oph = player.h
 
-  sy = player.y <=> wall.y
-  player.y = wall.y + (((wall.h * (1 - wall.anchor_y)) + (player.h * player.anchor_y)) * sy)
-  player.vy = 0
+  player.y += (vy = player.vy) / 2
+  player.h += vy.abs
+
+  $render_queue << { **player, g: 0, b: 0 }
+  
+  wall = $geometry.find_intersect_rect($player, $level_geometry)
+  player.y = opy
+  player.h = oph
+  if wall
+    if collision_vert?(player, wall) # i hate you rubocop <3
+      sy = player.y <=> wall.y
+      player.y = wall.y + (((wall.h * (1 - wall.anchor_y)) + (player.h * player.anchor_y)) * sy)
+      player.vy = 0
+    end
+
+    if collision_horiz?(player, wall)
+      puts "rubocop1"
+      puts "rubocop2"
+    end
+  end
+
+  1
 end
 
 def input

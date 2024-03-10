@@ -8,6 +8,15 @@ $player_default_accel = 1
 $default_gravity_coef = 2
 $player_default_jump = 15 * $default_gravity_coef**0.5
 
+$gtk.disable_framerate_warning!
+
+module GTK
+  module Notify
+    def tick_notification(...)
+    end
+  end
+end
+
 if $gtk.production?
   def p!(...)
   end
@@ -32,6 +41,9 @@ def init
     vy: 0,
     ax: 0,
     ay: 0,
+    r: 0,
+    g: 128,
+    b: 255,
     **spd
   }
 
@@ -41,6 +53,38 @@ def init
       y: 30,
       w: 1240,
       h: 20,
+      path: :pixel,
+      **spd
+    },
+    {
+      x: 1250,
+      y: 360,
+      w: 20,
+      h: 680,
+      path: :pixel,
+      **spd
+    },
+    {
+      x: 30,
+      y: 360,
+      w: 20,
+      h: 680,
+      path: :pixel,
+      **spd
+    },
+    {
+      x: 640,
+      y: 690,
+      w: 1240,
+      h: 20,
+      path: :pixel,
+      **spd
+    },
+    {
+      x: 120,
+      y: 360,
+      w: 20,
+      h: 540,
       path: :pixel,
       **spd
     }
@@ -58,56 +102,116 @@ def ap_vel(obj)
   obj.y += obj.vy
 end
 
-def ap_fric(obj, fric = 0.05)
+def ap_fric(obj, fric = 0.2)
   rv = 1 - fric
   obj.vx *= rv
   # obj.vy *= rv
 end
 
-def collision_vert?(o1, o2)
+def collision_vert?(o1, o2, _tol = 1)
   lw1 = (w1 = o1.w) * o1.anchor_x
   rw1 = w1 - lw1
   lw2 = (w2 = o2.w) * o2.anchor_x
   rw2 = w2 - lw2
   x1 = o1.x
   x2 = o2.x
-  (x1 - lw1 < x2 + rw2) && (x1 + rw1 > x2 - lw2)
+  l1 = x1 - lw1
+  r1 = x1 + rw1
+  l2 = x2 - lw2
+  r2 = x2 + rw2
+  (l1 < r2) && (r1 > l2)
+  # ((l1 - r2).abs < tol) || ((r1 - l2).abs < tol)
 end
 
-def collision_horiz?(o1, o2)
+def player_can_wall_grapple?(onto)
+  player = $player
+  opw = player.w
+  oph = player.h
+
+  vx = player.vx.abs
+  vx = vx < 1 ? 1 : vx
+  
+  player.w += vx
+  player.h -= 10
+
+  v = $geometry.intersect_rect?(player, onto, -1)
+  player.w = opw
+  player.h = oph
+
+  v
+end
+
+def collision_horiz?(o1, o2, _tol = 1)
+  bh1 = (h1 = o1.h) * o1.anchor_y
+  th1 = h1 - bh1
+  bh2 = (h2 = o2.h) * o2.anchor_y
+  th2 = h2 - bh2
+  y1 = o1.y
+  y2 = o2.y
+  b1 = y1 - bh1
+  t1 = y1 + th1
+  b2 = y2 - bh2
+  t2 = y2 + th2
+  (b1 < t2) && (t1 > b2)
+  # ((b1 - t2).abs < tol) || ((t1 - b2).abs < tol)
 end
 
 def handle_player
   player = $player
+
   ap_grav(player)
   ap_vel(player)
   ap_fric(player, 0.1)
 
   opy = player.y
+  opx = player.x
   oph = player.h
+  opw = player.w
 
   player.y += (vy = player.vy) / 2
+  player.x += (vx = player.vx) / 2
   player.h += vy.abs
+  player.w += vx.abs
 
-  $render_queue << { **player, g: 0, b: 0 }
-  
-  wall = $geometry.find_intersect_rect($player, $level_geometry)
+  walls = $geometry.find_all_intersect_rect(player, $level_geometry)
   player.y = opy
+  player.x = opx
   player.h = oph
-  if wall
-    if collision_vert?(player, wall) # i hate you rubocop <3
-      sy = player.y <=> wall.y
-      player.y = wall.y + (((wall.h * (1 - wall.anchor_y)) + (player.h * player.anchor_y)) * sy)
-      player.vy = 0
-    end
+  player.w = opw
+  return unless walls.length > 0
 
-    if collision_horiz?(player, wall)
-      puts "rubocop1"
-      puts "rubocop2"
-    end
+  dx = dy = Float::INFINITY
+  
+
+  sty = {}
+  stx = {}
+
+  wally = walls.min_by { |w|
+    sy = opy <=> w.y
+    dyc = ((sty[w] = w.y + (((w.h * (1 - w.anchor_y)) + (player.h * player.anchor_y)) * sy)) - opy).abs
+    dy = dy < dyc ? dy : dyc
+    dyc
+  }
+
+  wallx = walls.min_by { |w|
+    sx = opx <=> w.x
+    dxc = ((stx[w] = w.x + (((w.w * (1 - w.anchor_x)) + (player.w * player.anchor_x)) * sx)) - opx).abs
+    dx = dx < dxc ? dx : dxc
+    dxc
+  }
+
+  if wallx != wally
+    player.x = stx[wallx]
+    player.y = sty[wally]
+    player.vx = 0
+    player.vy = 0
+  elsif dx < dy
+    player.x = stx[wallx]
+    player.vx = 0
+  else
+    player.y = sty[wallx]
+    player.vy = 0
   end
-
-  1
 end
 
 def input
@@ -120,12 +224,37 @@ def input
 
   player.vx -= pda if keys_held.left
   player.vx += pda if keys_held.right
-  player.vy += $player_default_jump if keys_down.up
+  if keys_down.up
+    grappleable_wall = $level_geometry.filter { player_can_wall_grapple?(_1) }.min_by { (_1.x - player.x).abs }
+    if grappleable_wall
+      player.vy = $player_default_jump
+      player.vx = (grappleable_wall.x <=> player.x) * -10
+    else
+      player.vy = Math.log((player.vy < 0) ? $player_default_jump / 2 : player.vy + $player_default_jump, 1.2)
+    end
+  end
   player.vy -= pda * 2 if keys_held.down
+  
+
+  $init_done = false if keys_down.r
+  return unless keys_held.forward_slash
+
+  $gtk.slowmo!(12)
 end
 
 def fill_renderq
-  $render_queue << $player
+  player = $player
+  playertrails = 5.map { |i|
+    playertrail = { **player, g: 64, b: 128, r: 0, a: 255 / (i + 1) }
+    playertrail.y -= i * player.vy / 2
+    playertrail.x -= i * player.vx / 2
+    playertrail
+  }
+
+  
+  
+  $render_queue.concat(playertrails)
+  $render_queue << player
   $render_queue.concat($level_geometry)
 end
 
